@@ -114,6 +114,35 @@
                     name: "DC power visa",
                     link: "#"
                 }
+            ],
+
+            ArrayContacts: [
+                {
+                    description: "Facebook",
+                    link: "#",
+                    image: "../assets/img/footer-facebook.png"
+                },
+                {
+                    description: "Twitter",
+                    link: "#",
+                    image: "../assets/img/footer-twitter.png"
+                },
+                {
+                    description: "Youtube",
+                    link: "#",
+                    image: "../assets/img/footer-youtube.png"
+                },
+                {
+                    description: "Pinterest",
+                    link: "#",
+                    image: "../assets/img/footer-pinterest.png"
+                },
+                {
+                    description: "Periscope",
+                    link: "#",
+                    image: "../assets/img/footer-periscope.png"
+                },
+             
             ]
         }
     }
@@ -162,45 +191,96 @@
         </section>
 
         <section>
-
+            <div>
+                <div>
+                    <button>
+                        sign-up now!
+                    </button>
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <h3>follow us</h3>
+                        </li>
+                        <li  v-for="(element, index) in ArrayContacts" :key="index">
+                            <figure>
+                                <a :href="element.link">
+                                    <img  :src="`${element.image}`" >
+                                </a>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </footer>
 </template>
 
 <style scoped lang="scss">
-@use '../styles/partials/variables' as *;
-@use '../styles/partials/mixins' as *;
-
-section:first-child{
-    > div {
-        margin: 0 auto;
-        width: 70%;
-        padding: 30px 0;
-
-        display: flex;
-        gap: 25px;
-        div {
-            h3 {
-                color: white;
-                text-transform: $textUppercase;
-                padding-block: 10px;
+    @use '../styles/partials/variables' as *;
+    @use '../styles/partials/mixins' as *;
+    
+    section:first-child{
+        > div {
+            @include GeneralWidth;
+    
+            padding: 30px 0;
+    
+            display: flex;
+            gap: 25px;
+            div {
+                h3 {
+                    color: white;
+                    text-transform: $textUppercase;
+                    padding-block: 10px;
+                }
+    
+                ul {
+                    line-height: 180%;
+                    li{
+                        a{
+                            color: rgba(119, 124, 120, 1);
+                            text-transform: $textCapitalize;
+                        }
+                    }
+                } 
+            }
+        }
+    
+        background-image: url("../assets/img/footer-bg.jpg");
+        @include BackgroundImage
+    }
+    
+    section:last-child{
+        background-color: rgba(48, 48, 48, 1);
+        > div{
+            @include GeneralWidth;
+            @include PositionFlex;
+            div:first-child{
+                button{
+                    background-color: rgba(48, 48, 48, 1);
+                    border: 2px solid $ColorBlue;
+                    padding: 10px;
+                    color: white;
+                    text-transform: $textUppercase;
+                }
             }
 
-            ul {
-                line-height: 180%;
-                li{
-                    a{
-                        color: rgba(119, 124, 120, 1);
-                        text-transform: $textCapitalize;
+            div:last-child{
+                padding: 30px 0;
+                ul{
+                    @include PositionFlex;
+                    gap: 20px;
+                    li:first-child{
+                        > h3{
+                            text-transform: $textUppercase;
+                            color: $ColorBlue;
+                        }
                     }
                 }
-            } 
+            }
         }
     }
-
-    background-image: url("../assets/img/footer-bg.jpg");
-    @include BackgroundImage
-}
 </style>
 
 
