@@ -72,8 +72,7 @@
       background-color: rgba(28, 28, 28, 1);
 
       div{
-        margin: 0 auto;
-        width: 70%;
+        @include GeneralWidth;
 
         color: white;
 
@@ -85,8 +84,7 @@
       background-color: $ColorBlue;
 
       div{
-        margin: 0 auto;
-        width: 70%;
+        @include GeneralWidth;
         color: white;
         padding: 40px 0;
 

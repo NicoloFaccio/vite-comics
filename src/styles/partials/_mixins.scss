@@ -3,3 +3,14 @@
     justify-content: space-between;
     align-items: center;
 }
+
+@mixin BackgroundImage{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin GeneralWidth {
+    margin: 0 auto;
+    width: 70%;
+}

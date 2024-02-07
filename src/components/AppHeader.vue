@@ -77,31 +77,32 @@
         > div {
             @include PositionFlex;
 
-            margin: 0 auto;
-            width: 70%;
+            @include GeneralWidth;
 
             text-transform: uppercase;
+
+            figure{
+                padding: 20px 0;
+            }
             
             nav {
                 ul {
-                list-style-type: none;
+                    display: flex;
+                    gap: 15px;
 
-                display: flex;
-                gap: 15px;
-
-                li {
-                    &:hover{ 
-                        border-bottom: 1px solid $ColorBlue;
-                    }
-
-                    a {
-                        color: rgba(104, 92, 86, 1);
+                    li {
                         &:hover{ 
-                            color: $ColorBlue;
+                            border-bottom: 1px solid $ColorBlue;
+                        }
+
+                        a {
+                            color: rgba(104, 92, 86, 1);
+                            &:hover{ 
+                                color: $ColorBlue;
+                            }
                         }
                     }
                 }
-            }
             }
         }
     }
