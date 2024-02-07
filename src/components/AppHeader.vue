@@ -1,6 +1,52 @@
 <script>
   export default{
-    name: "AppHeader"
+    name: "AppHeader",
+    data(){
+        return {
+            ArrayNav: [
+                {
+                    name: "characters",
+                    link: "#"
+                },
+                {
+                    name: "comics",
+                    link: "#"
+                },
+                {
+                    name: "movies",
+                    link: "#"
+                },
+                {
+                    name: "tv",
+                    link: "#"
+                },
+                {
+                    name: "games",
+                    link: "#"
+                },
+                {
+                    name: "collectibles",
+                    link: "#"
+                },
+                {
+                    name: "videos",
+                    link: "#"
+                },
+                {
+                    name: "fans",
+                    link: "#"
+                },
+                {
+                    name: "news",
+                    link: "#"
+                },
+                {
+                    name: "shop",
+                    link: "#"
+                },
+            ]
+        }
+    }
   }
 </script>
 
@@ -13,53 +59,19 @@
 
             <nav>
                 <ul>
-               <li>
-                   <a href="#">characters</a>
-                </li>
-
-               <li>
-                   <a href="#">comics</a>
-                </li>
-
-               <li>
-                   <a href="#">movies</a>
-                </li>
-
-               <li>
-                   <a href="#">tv</a>
-                </li>
-
-               <li>
-                   <a href="#">games</a>
-                </li>
-
-               <li>
-                   <a href="#">collectibles</a>
-                </li>
-
-               <li>
-                   <a href="#">videos</a>
-                </li>
-
-               <li>
-                   <a href="#">fans</a>
-                </li>
-
-               <li>
-                   <a href="#">news</a>
-                </li>
-
-               <li>
-                   <a href="#">shop</a>
-                </li>
-            </ul>
+                    <li v-for="(element, index) in ArrayNav" :key="index">
+                       <a :href="element.link">{{ element.name }}</a>
+                    </li>
+                </ul>
             </nav>
             
         </div>
     </header>
 </template>
 
-<style>
+<style scoped lang="scss">
+@use '../styles/partials/variables' as *;
+
     header{
         > div {
             display: flex;
@@ -80,14 +92,13 @@
 
                 li {
                     &:hover{ 
-                        border-bottom: 1px solid rgba(2, 130, 249, 1);
+                        border-bottom: 1px solid $ColorBlue;
                     }
 
                     a {
-                        text-decoration: none;
                         color: rgba(104, 92, 86, 1);
                         &:hover{ 
-                            color: rgba(2, 130, 249, 1);
+                            color: $ColorBlue;
                         }
                     }
                 }

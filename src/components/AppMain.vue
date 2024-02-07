@@ -63,7 +63,9 @@
   </main>
 </template>
 
-<style>
+<style scoped lang="scss">
+@use '../styles/partials/variables' as *;
+
   main{
     section:first-child  {
       background-color: rgba(28, 28, 28, 1);
@@ -74,12 +76,12 @@
 
         color: white;
 
-        padding: 40px 0 40px 70px;
+        padding: 40px 0;
       }
     }
 
     section:last-child  {
-      background-color: rgba(2, 130, 249, 1);
+      background-color: $ColorBlue;
 
       div{
         margin: 0 auto;
@@ -99,7 +101,6 @@
             text-transform: uppercase;
             a {
               color: white;
-              text-decoration: none;
             }
           }
         }
