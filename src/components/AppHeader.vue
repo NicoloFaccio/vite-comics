@@ -71,12 +71,11 @@
 
 <style scoped lang="scss">
 @use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
 
     header{
         > div {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include PositionFlex;
 
             margin: 0 auto;
             width: 70%;

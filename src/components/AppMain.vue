@@ -65,6 +65,7 @@
 
 <style scoped lang="scss">
 @use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
 
   main{
     section:first-child  {
@@ -89,9 +90,7 @@
         color: white;
         padding: 40px 0;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include PositionFlex;
 
         figure{
           display: flex;
