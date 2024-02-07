@@ -82,17 +82,17 @@
                     &:hover{ 
                         border-bottom: 1px solid rgba(2, 130, 249, 1);
                     }
+
+                    a {
+                        text-decoration: none;
+                        color: rgba(104, 92, 86, 1);
+                        &:hover{ 
+                            color: rgba(2, 130, 249, 1);
+                        }
+                    }
                 }
             }
             }
-        }
-    }
-
-    a {
-        text-decoration: none;
-        color: rgba(104, 92, 86, 1);
-        &:hover{ 
-            color: rgba(2, 130, 249, 1);
         }
     }
 </style>
