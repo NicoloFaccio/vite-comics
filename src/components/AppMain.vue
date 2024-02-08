@@ -1,6 +1,38 @@
 <script>
   export default{
-    name: "AppMain"
+    name: "AppMain",
+
+    data(){
+      return {
+        ArrayIcons: [
+          {
+            name: "digital comics",
+            link: "#",
+            image:"./src/assets/img/buy-comics-digital-comics.png"
+          },
+          {
+            name: "dc merchandise",
+            link: "#",
+            image:"./src/assets/img/buy-comics-merchandise.png"
+          },
+          {
+            name: "subscriptions",
+            link: "#",
+            image:"./src/assets/img/buy-comics-subscriptions.png"
+          },
+          {
+            name: "comic shop locator",
+            link: "#",
+            image:"./src/assets/img/buy-comics-shop-locator.png"
+          },
+          {
+            name: "dc power visa",
+            link: "#",
+            image:"./src/assets/img/buy-dc-power-visa.svg"
+          }
+        ]
+      }
+    }
   }
 </script>
 
@@ -14,47 +46,11 @@
 
     <section>
       <div>
-        <figure>
-          <img width="50px" src="../assets/img/buy-comics-digital-comics.png" alt="digital comics">
+        <figure v-for="(element, index) in ArrayIcons" :key="index" >
+          <img width="40px" :src="`${element.image}`" alt="Icons">
           <span>
-            <a href="#">
-              digital comics
-            </a> 
-          </span>
-        </figure>
-
-        <figure>
-          <img width="50px" src="../assets/img/buy-comics-merchandise.png" alt="dc merchandise">
-          <span>
-            <a href="#">
-              dc merchandise
-            </a> 
-          </span>
-        </figure>
-
-        <figure>
-          <img width="50px" src="../assets/img/buy-comics-subscriptions.png" alt="subscriptions">
-          <span>
-            <a href="#">
-              subscription
-            </a> 
-          </span>
-        </figure>
-
-        <figure>
-          <img width="50px" src="../assets/img/buy-comics-shop-locator.png" alt="comic shop">
-          <span>
-            <a href="#">
-              comic shop locator
-            </a> 
-          </span>
-        </figure>
-
-        <figure>
-          <img width="50px" src="../assets/img/buy-dc-power-visa.svg" alt="dc power visa">
-          <span>
-            <a href="#">
-              dc power visa
+            <a :href="element.link">
+              {{ element.name }}
             </a> 
           </span>
         </figure>

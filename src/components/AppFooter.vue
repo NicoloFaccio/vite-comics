@@ -120,27 +120,27 @@
                 {
                     description: "Facebook",
                     link: "#",
-                    image: "../assets/img/footer-facebook.png"
+                    image: "./src/assets/img/footer-facebook.png"
                 },
                 {
                     description: "Twitter",
                     link: "#",
-                    image: "../assets/img/footer-twitter.png"
+                    image: "./src/assets/img/footer-twitter.png"
                 },
                 {
                     description: "Youtube",
                     link: "#",
-                    image: "../assets/img/footer-youtube.png"
+                    image: "./src/assets/img/footer-youtube.png"
                 },
                 {
                     description: "Pinterest",
                     link: "#",
-                    image: "../assets/img/footer-pinterest.png"
+                    image: "./src/assets/img/footer-pinterest.png"
                 },
                 {
                     description: "Periscope",
                     link: "#",
-                    image: "../assets/img/footer-periscope.png"
+                    image: "./src/assets/img/footer-periscope.png"
                 },
              
             ]

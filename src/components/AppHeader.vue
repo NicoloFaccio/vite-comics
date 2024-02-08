@@ -97,6 +97,7 @@
 
                         a {
                             color: rgba(104, 92, 86, 1);
+                            font-weight: bold;
                             &:hover{ 
                                 color: $ColorBlue;
                             }
