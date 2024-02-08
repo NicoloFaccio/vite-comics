@@ -1,48 +1,59 @@
 <script>
   export default{
     name: "AppHeader",
+
     data(){
         return {
             ArrayNav: [
                 {
                     name: "characters",
-                    link: "#"
+                    link: "#",
+                    current: false
                 },
                 {
                     name: "comics",
-                    link: "#"
+                    link: "#",
+                    current: true
                 },
                 {
                     name: "movies",
-                    link: "#"
+                    link: "#",
+                    current: false
                 },
                 {
                     name: "tv",
-                    link: "#"
+                    link: "#",
+                    current: false
                 },
                 {
                     name: "games",
-                    link: "#"
+                    link: "#",
+                    current: false
                 },
                 {
                     name: "collectibles",
-                    link: "#"
+                    link: "#",
+                    current: false
                 },
                 {
                     name: "videos",
-                    link: "#"
+                    link: "#",
+                    current: false
                 },
                 {
                     name: "fans",
-                    link: "#"
+                    link: "#",
+                    current: false
                 },
                 {
                     name: "news",
-                    link: "#"
+                    link: "#",
+                    current: false
                 },
                 {
                     name: "shop",
-                    link: "#"
+                    link: "#",
+                    current: false
                 },
             ]
         }
@@ -59,8 +70,15 @@
 
             <nav>
                 <ul>
-                    <li v-for="(element, index) in ArrayNav" :key="index">
-                       <a :href="element.link">{{ element.name }}</a>
+                    <li 
+                      v-for="(element, index) in ArrayNav" 
+                      :key="index"
+                      :class="element.current ? 'active-bottom' : ''">
+                        <a
+                        :class="element.current ? 'active' : ''"
+                          :href="element.link">
+                            {{ element.name }}
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -73,6 +91,13 @@
 @use '../styles/partials/variables' as *;
 @use '../styles/partials/mixins' as *;
 
+.active-bottom{
+    border-bottom: 3px solid $ColorBlue;
+}
+.active {
+    color: $ColorBlue;
+}
+
     header{
         > div {
             @include PositionFlex;
@@ -80,6 +105,8 @@
             @include GeneralWidth;
 
             text-transform: uppercase;
+
+            height: 130px;
 
             figure{
                 padding: 20px 0;
@@ -91,16 +118,16 @@
                     gap: 15px;
 
                     li {
-                        &:hover{ 
-                            border-bottom: 1px solid $ColorBlue;
-                        }
+                        line-height: 125px;
 
                         a {
                             color: rgba(104, 92, 86, 1);
                             font-weight: bold;
-                            &:hover{ 
+
+                            &:hover {
                                 color: $ColorBlue;
                             }
+
                         }
                     }
                 }

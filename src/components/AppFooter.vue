@@ -223,6 +223,10 @@
     section:first-child{
         > div {
             @include GeneralWidth;
+            background-image: url("../assets/img/dc-logo-bg.png");
+            background-position: right;
+            background-repeat: no-repeat;
+
     
             padding: 30px 0;
     
