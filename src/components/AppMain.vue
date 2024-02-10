@@ -120,11 +120,12 @@
 <template>
   <main>
     <section>
-      <div>
+      <div class="jumbotron">
 
       </div>
 
       <div class="comics">
+        <h2>current series</h2>
         <ListComics 
       v-for="(element, index) in ArrayComics" 
       :key="index"
@@ -132,14 +133,6 @@
       :propsSeries="element.series"
       />
       </div>
-      
-
-      <!-- <div class="comics">
-        <div v-for="(element, index) in ArrayComics" :key="index">
-          <a  :href="element.thumb"></a>
-          <span>{{ element.series }}</span>
-        </div>
-      </div> -->
 
       <div class="button-load">
         <button>
@@ -171,6 +164,14 @@
     section:first-child  {
       background-color: rgba(28, 28, 28, 1);
 
+      .jumbotron {
+        background-image: url("../assets/img/jumbotron.jpg");
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        min-height: 400px;
+      }
+
       .comics {
         @include GeneralWidth;
 
@@ -181,6 +182,18 @@
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
+        position: relative;
+
+        h2 {
+          position: absolute;
+          top: -25px;
+
+          background-color: $ColorBlue;
+          color: white;
+          font-weight: bold;
+          text-transform: $textUppercase;
+          padding: 10px;
+        }
       }
 
       .button-load {
